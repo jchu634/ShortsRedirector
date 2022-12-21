@@ -1,0 +1,35 @@
+{
+    "name": "Shorts Redirector!",
+    "description": "Lets you view easily view Youtube shorts as a video.\nIntercepts Youtube requests for shorts and redirects to the video version of the short.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "options_page":"options.html",
+    "icons": {
+        "48": "/assets/icons/48.png",
+        "128": "/assets/icons/128.png"
+    },
+    "action":{
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "/assets/icons/48.png",
+            "128": "/assets/icons/128.png"
+        }
+    },
+    "permissions":[
+        "tabs",
+        "webRequest",
+        "storage"
+    ],
+    "host_permissions": ["http://*.youtube.com/*","https://*.youtube.com/*","http://*.google.com/","http://youtube.com/*","https://youtube.com/*"],
+    "optional_host_permissions": [
+        "*://*/*"
+    ],
+    "background":{
+        "service_worker":"background.js"
+        
+    },
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; style-src 'self' 'unsafe-inline'"
+    }
+    
+}
